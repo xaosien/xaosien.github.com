@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[新的旅程]]></title>
+      <url>%2F2016%2F11%2F07%2FNewPost%2F</url>
+      <content type="text"><![CDATA[搭建博客(github托管) github+hexo 发布日记，杂文，所见所想(notes) 记录一下搭建经历和遇到的一些问题： 工作流程 注册github，创建个人主页安装nodejs和hexo本地测试hexo server，编辑站点关联github，deploy 1. 注册[github][1]，创建个人主页这个比较简单，注册账号之后创建一个名为：username.github.com的repository,使用默认layout生成首页即可。 2. 安装[nodejs][2]+hexo网上有很多github静态博客使用jekyll，不过个人非常喜欢hexo的一些主题，所以放弃jekyll。安装nodejs，遇到一点小小的问题，刚开始ubuntu16.10环境下apt安装成功，结果在npm install hexo的时候各种error，后来改为从nodejs官网下载压缩文件后解压安装就好。 wget https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz xz -d node-v4.4.4-linux-x64.tar.xz tar -xvf node-v4.4.4-linux-x64.tar mv node-v4.4.4-linux-x64 node-v4.4.4 mv node-v4.4.4 /usr/local/node vim /etc/profile export PATH=$PATH:/usr/local/node/bin source /etc/profile 测试安装是否成功： npm -version 安装git apt-get install git 安装hexo mkdir hexo cd hexo sudo npm install -g hexo-cli(如果出现红字，自行谷歌) hexo init 测试是否成功 hexo server 访问http://localhost:4000，看是否成功生成首页 3. 本地测试hexo server接下来就是主题替换，然后修改，测试。这一步问题不多 4. 关联github在这一步也没有遇到什么问题，因为是新建的主机，也没有出现多sshkey情况，日后补充。 5. 远程更新由于我是用自己的域名，repo根目录下要有一个CNAME文件，但是每次更新主题之后都要重新创建一次，后来将CNAME文件保存在本地hexo目录下的source文件夹下就可以解决。]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>%2F2016%2F11%2F06%2Fhello-world%2F</url>
       <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

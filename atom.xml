@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xaosien.com/"/>
-  <updated>2016-11-06T14:24:04.018Z</updated>
+  <updated>2016-11-07T05:00:07.962Z</updated>
   <id>http://xaosien.com/</id>
   
   <author>
@@ -14,6 +14,67 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新的旅程</title>
+    <link href="http://xaosien.com/2016/11/07/NewPost/"/>
+    <id>http://xaosien.com/2016/11/07/NewPost/</id>
+    <published>2016-11-07T04:11:52.000Z</published>
+    <updated>2016-11-07T05:00:07.962Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<ul>
+<li>搭建博客(github托管)</li>
+<li>github+hexo</li>
+<li>发布日记，杂文，所见所想(notes)</li>
+</ul>
+</blockquote>
+<p>记录一下搭建经历和遇到的一些问题：</p>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><blockquote>
+<p>注册github，创建个人主页<br>安装nodejs和hexo<br>本地测试hexo server，编辑站点<br>关联github，deploy</p>
+</blockquote>
+<h3 id="1-注册-github-1-，创建个人主页"><a href="#1-注册-github-1-，创建个人主页" class="headerlink" title="1. 注册[github][1]，创建个人主页"></a>1. 注册[github][1]，创建个人主页</h3><p>这个比较简单，注册账号之后创建一个名为：username.github.com的repository,使用默认layout生成首页即可。</p>
+<h3 id="2-安装-nodejs-2-hexo"><a href="#2-安装-nodejs-2-hexo" class="headerlink" title="2. 安装[nodejs][2]+hexo"></a>2. 安装[nodejs][2]+hexo</h3><p>网上有很多github静态博客使用jekyll，不过个人非常喜欢hexo的一些主题，所以放弃jekyll。<br>安装nodejs，遇到一点小小的问题，刚开始ubuntu16.10环境下apt安装成功，结果在npm install hexo的时候各种error，后来改为从nodejs官网下载压缩文件后解压安装就好。</p>
+<pre><code>wget https://nodejs.org/dist/v4.4.4/node-v4.4.4-linux-x64.tar.xz
+xz -d node-v4.4.4-linux-x64.tar.xz tar -xvf node-v4.4.4-linux-x64.tar
+mv node-v4.4.4-linux-x64 node-v4.4.4
+mv node-v4.4.4 /usr/local/node
+vim /etc/profile
+export PATH=$PATH:/usr/local/node/bin
+source /etc/profile
+</code></pre><p>测试安装是否成功：</p>
+<pre><code>npm -version
+</code></pre><p>安装git</p>
+<pre><code>apt-get install git
+</code></pre><p>安装hexo</p>
+<pre><code>mkdir hexo
+cd hexo
+sudo npm install -g hexo-cli(如果出现红字，自行谷歌)
+hexo init
+</code></pre><p>测试是否成功</p>
+<pre><code>hexo server
+</code></pre><p>访问<a href="http://localhost:4000，看是否成功生成首页" target="_blank" rel="external">http://localhost:4000，看是否成功生成首页</a></p>
+<h3 id="3-本地测试hexo-server"><a href="#3-本地测试hexo-server" class="headerlink" title="3. 本地测试hexo server"></a>3. 本地测试hexo server</h3><p>接下来就是主题替换，然后修改，测试。<br>这一步问题不多</p>
+<h3 id="4-关联github"><a href="#4-关联github" class="headerlink" title="4. 关联github"></a>4. 关联github</h3><p>在这一步也没有遇到什么问题，因为是新建的主机，也没有出现多sshkey情况，日后补充。</p>
+<h3 id="5-远程更新"><a href="#5-远程更新" class="headerlink" title="5. 远程更新"></a>5. 远程更新</h3><p>由于我是用自己的域名，repo根目录下要有一个CNAME文件，但是每次更新主题之后都要重新创建一次，后来将CNAME文件保存在本地hexo目录下的source文件夹下就可以解决。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;搭建博客(github托管)&lt;/li&gt;
+&lt;li&gt;github+hexo&lt;/li&gt;
+&lt;li&gt;发布日记，杂文，所见所想(notes)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;记录一下搭建经历和遇到的一些问题：&lt;/p&gt;
+&lt;h2
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
